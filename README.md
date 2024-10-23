@@ -9,4 +9,11 @@ DeepISO utilizes both sequence and structural information to predict interaction
 # USAGE
 ## DATASET
 We provide the dataset used in this study from Yang et al., which can be found in the dataset folder. The dataset used by DeepISO contains both positive and negative samples. Each file includes three columns: the first column is the Isoform, the second column is the interaction partner, and the third column is the label.
+## Requirements
+torch (==2.0.1)
+scikit-learn (==1.2.2)
+scipy (==1.10.1)
+numpy (==1.24.3)
+zzd (==1.0.5)
+
 
