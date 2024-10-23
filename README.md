@@ -16,4 +16,11 @@ scipy (==1.10.1)<br/>
 numpy (==1.24.3)<br/>
 zzd (==1.0.5)<br/>
 
+# Feature preparing
+## ESM2 GCN feature preparing
+Users should first generate a .pdb file for each protein (which can be obtained through Uniprot or predicted using AlphaFold/ESMFold). Then, users should use the ESM2 model (esm2_t33_650M_UR50D) to generate a .pt file for each protein.Finally, based on the /PeSTO/DeepISO.ESM2.PeSTO.feature.input.ipynb notebook, predict the probability of each residue in each protein being involved in protein-protein interactions.
+## SF(Structure Feature) GCN feature preparing
+
+
+
 
