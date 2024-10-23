@@ -6,5 +6,7 @@ DeepISO utilizes both sequence and structural information to predict interaction
 # Graph convolutional neural network
  In DeepISO, we use GCN and random forest to capture hidden features of protein structures. Before usage, the user should first calculate the residue features of the proteins using ESM2 and PesTO. The graph used here is a residue contact map, with a threshold of 8 Å.
 
- 
+# USAGE
+## DATASET
+We provide the dataset used in this study from Yang et al., which can be found in the dataset folder. The dataset used by DeepISO contains both positive and negative samples. Each file includes three columns: the first column is the Isoform, the second column is the interaction partner, and the third column is the label.
 
