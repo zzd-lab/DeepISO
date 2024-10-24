@@ -10,10 +10,27 @@ DeepISO utilizes both sequence and structural information to predict interaction
 ## DATASET
 We provide the dataset used in this study from Yang et al., which can be found in the dataset folder. The dataset used by DeepISO contains both positive and negative samples. Each file includes three columns: the first column is the Isoform, the second column is the interaction partner, and the third column is the label.
 ## Requirements
-torch (==2.0.1)
-scikit-learn (==1.2.2)
-scipy (==1.10.1)
-numpy (==1.24.3)
-zzd (==1.0.5)
+torch (==2.0.1)<br/>
+scikit-learn (==1.2.2)<br/>
+scipy (==1.10.1)<br/>
+numpy (==1.24.3)<br/>
+zzd (==1.0.5)<br/>
+
+# Feature preparing
+## ESM2 GCN feature preparing
+Users should first generate a .pdb file for each protein (which can be obtained through Uniprot or predicted using AlphaFold/ESMFold). Then, users should use the ESM2 model (esm2_t33_650M_UR50D) to generate a .pt file for each protein.Finally, based on the `/PeSTO/DeepISO.ESM2.PeSTO.feature.input.ipynb` notebook, predict the probability of each residue in each protein being involved in protein-protein interactions.
+## SF(Structure Feature) GCN feature preparing
+The structural features consist mainly of two parts. Users can generate structural features for each residue of each protein using Foldseek's `easy-search` parameter, and then use the `/Foldseek/isoform.foldseek.extract.pl` Perl script to extract information from the generated `.queryss` file. Afterward, PeSTO can be used to generate the probability of each residue being involved in interactions with proteins, nucleic acids, lipids, ions, or small molecules, and these probabilities can be used as features. Users can extract PeSTO features using the `/PeSTO/DeepISO.SF.PeSTO.feature.input.ipynb` notebook.
+## RF feature preparing
+Users can perform feature extraction using the data preparation section in `DeepISO.RF.ipynb`. It is necessary to generate a `.pt` file for each protein in advance using ESM2.
+
+# Train the model
+For user convenience, we provide a Jupyter notebook for training DeepISO. Additionally, we offer pre-trained models for each classifier for users to use. If you wish to train your own models, you need to replace the paths of the training , test sets and features in the notebook and generate the corresponding features.
+
+# Acknowledgments
+We would like to thank the PeSTO team for the source code of feature extraction part.
+
+
+
 
 
