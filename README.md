@@ -24,5 +24,13 @@ The structural features consist mainly of two parts. Users can generate structur
 ## RF feature preparing
 Users can perform feature extraction using the data preparation section in `DeepISO.RF.ipynb`. It is necessary to generate a `.pt` file for each protein in advance using ESM2.
 
+# Train the model
+For user convenience, we provide a Jupyter notebook for training DeepISO. Additionally, we offer pre-trained models for each classifier for users to use. If you wish to train your own models, you need to replace the paths of the training , test sets and features in the notebook and generate the corresponding features.
+
+# Acknowledgments
+We would like to thank the PeSTO team for the source code of feature extraction part.
+
+
+
 
 
